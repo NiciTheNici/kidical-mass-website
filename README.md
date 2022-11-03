@@ -1,4 +1,4 @@
-# fresh project
+# Kidical Mass Website
 
 ### Usage
 
@@ -9,3 +9,4 @@ deno task start
 ```
 
 This will watch the project directory and restart as necessary.
+
