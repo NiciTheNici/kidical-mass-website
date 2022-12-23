@@ -26,19 +26,25 @@ export class MapComponent implements OnInit {
       { attribution: '© OpenStreetMap contributors' }
     ).addTo(this.map);
 
-    this.markers.push(
-      L.marker(
-        [47.3672808, 8.5408271],
-        {
-          icon: this.icon,
-        }
-      ));
+    this.createMarker(47.3672808, 8.5408271);
+    this.createMarker(46.2058820, 6.1477327);
 
     this.markers.map(marker => marker.addTo(this.map));
   }
 
   ngOnInit(): void {
     this.initMap();
+  }
+
+  createMarker(x: number, y: number): void {
+    this.markers.push(
+      L.marker(
+        [x, y],
+        {
+          icon: this.icon,
+        }
+      )
+    )
   }
 }
 
