@@ -1,1 +1,8 @@
-<app-map></app-map>
+<div class="grid-container">
+  <div class="sidebar">
+    <p *ngFor="let number of numbers" class="entry"> Entry {{number}} </p>
+  </div>
+  <div class="map">
+    <app-map></app-map>
+  </div>
+</div>

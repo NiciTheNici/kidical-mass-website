@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+
+
+export class AppComponent implements OnInit {
+  public numbers: number[] = Array.from(Array(10).keys(), n => n + 1);;
   title = 'kidical_maps';
+
+  ngOnInit(): void {
+    console.log(this.numbers);
+  }
 }
