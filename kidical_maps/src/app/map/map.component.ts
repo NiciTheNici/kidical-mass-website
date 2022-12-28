@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
+import { Entry } from '../entry/entry';
 
 @Component({
   selector: 'app-map',
@@ -14,6 +15,8 @@ export class MapComponent implements OnInit {
     iconUrl: 'https://whatemoji.org/wp-content/uploads/2020/07/Party-Popper-Emoji.png',
     iconSize: [50, 50],
   });
+
+  private entry: Entry;
 
   private initMap(): void {
     this.map = L.map('map', {
@@ -34,6 +37,18 @@ export class MapComponent implements OnInit {
 
   ngOnInit(): void {
     this.initMap();
+  }
+
+  constructor() {
+    this.entry =
+    {
+      title: "hi",
+      description: "I am me",
+      coordinates: {
+        xLat: 47,
+        yLat: 8,
+      }
+    };
   }
 
   createMarker(x: number, y: number): void {
