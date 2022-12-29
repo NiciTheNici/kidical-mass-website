@@ -17,12 +17,15 @@ export class MapComponent implements OnInit {
   private initMap(): void {
     this.map = L.map('map', {
       center: [47.3727, 8.5419],
-      zoom: 13
+      zoom: 13,
+      attributionControl: true,
     });
 
     L.tileLayer(
       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      { attribution: '© OpenStreetMap contributors' }
+      {
+        attribution: '© OpenStreetMap contributors',
+      }
     ).addTo(this.map);
 
     this.service.entries.map(entry => {
