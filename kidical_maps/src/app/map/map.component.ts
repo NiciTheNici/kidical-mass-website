@@ -25,7 +25,9 @@ export class MapComponent implements OnInit {
       { attribution: '© OpenStreetMap contributors' }
     ).addTo(this.map);
 
-    this.createMarker(this.service.entries[0]);
+    this.service.entries.map(entry => {
+      this.createMarker(entry);
+    });
     // this.createMarker(46.2058820, 6.1477327);
 
     this.markers.map(marker => marker.addTo(this.map));
