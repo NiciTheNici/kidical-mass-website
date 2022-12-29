@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import { Entry } from '../entry/entry';
+import { AppService } from '../service/app.service';
 
 @Component({
   selector: 'app-map',
@@ -11,12 +12,7 @@ export class MapComponent implements OnInit {
 
   private map!: L.Map;
   private markers: L.Marker[] = [];
-  private icon: L.Icon = L.icon({
-    iconUrl: 'https://whatemoji.org/wp-content/uploads/2020/07/Party-Popper-Emoji.png',
-    iconSize: [50, 50],
-  });
-
-  private entry: Entry;
+  private icon: L.Icon;
 
   private initMap(): void {
     this.map = L.map('map', {
@@ -29,32 +25,28 @@ export class MapComponent implements OnInit {
       { attribution: '© OpenStreetMap contributors' }
     ).addTo(this.map);
 
-    this.createMarker(47.3672808, 8.5408271);
-    this.createMarker(46.2058820, 6.1477327);
+    this.createMarker(this.service.entries[0]);
+    // this.createMarker(46.2058820, 6.1477327);
 
     this.markers.map(marker => marker.addTo(this.map));
   }
 
   ngOnInit(): void {
     this.initMap();
+    console.log(this.service);
   }
 
-  constructor() {
-    this.entry =
-    {
-      title: "hi",
-      description: "I am me",
-      coordinates: {
-        xLat: 47,
-        yLat: 8,
-      }
-    };
+  constructor(private service: AppService) {
+    this.icon = L.icon({
+      iconUrl: 'https://whatemoji.org/wp-content/uploads/2020/07/Party-Popper-Emoji.png',
+      iconSize: [50, 50],
+    });
   }
 
-  createMarker(x: number, y: number): void {
+  createMarker(entry: Entry): void {
     this.markers.push(
       L.marker(
-        [x, y],
+        [entry.location.lat, entry.location.lng],
         {
           icon: this.icon,
         }
