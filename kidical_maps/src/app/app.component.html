@@ -2,6 +2,7 @@
   <div class="sidebar">
     <app-entry *ngFor="let entry of this.service.entries"> 
       <b>{{entry.title}}</b>
+      <p>{{entry.description}}</p>
     </app-entry>
   </div>
   <div class="map">
