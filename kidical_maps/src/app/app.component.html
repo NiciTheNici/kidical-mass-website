@@ -1,6 +1,6 @@
 <div class="grid-container">
   <div class="sidebar">
-    <app-entry *ngFor="let entry of this.service.entries"> 
+    <app-entry *ngFor="let entry of this.service.entries" (click)="clickCard(entry)"> 
       <b>{{entry.title}}</b>
       <p>{{entry.description}}</p>
     </app-entry>

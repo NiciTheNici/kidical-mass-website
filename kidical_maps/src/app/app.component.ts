@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Entry } from './entry/entry';
 import { AppService } from './service/app.service';
 
 @Component({
@@ -18,5 +19,10 @@ export class AppComponent implements OnInit {
 
   constructor(public service: AppService) {
 
+  }
+
+  clickCard(entry: Entry): void {
+    console.log(entry);
+    this.service.map.flyTo(entry.location, 13)
   }
 }

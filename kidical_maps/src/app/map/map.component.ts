@@ -10,13 +10,12 @@ import { AppService } from '../service/app.service';
 })
 export class MapComponent implements OnInit {
 
-  private map!: L.Map;
   private markers: L.Marker[] = [];
   private icon: L.Icon;
 
   private initMap(): void {
-    this.map = L.map('map', {
-      center: [47.3727, 8.5419],
+    this.service.map = L.map('map', {
+      center: this.service.entries[0].location,
       zoom: 13,
       attributionControl: true,
     });
@@ -26,14 +25,14 @@ export class MapComponent implements OnInit {
       {
         attribution: '© OpenStreetMap contributors',
       }
-    ).addTo(this.map);
+    ).addTo(this.service.map);
 
     this.service.entries.map(entry => {
       this.createMarker(entry);
     });
     // this.createMarker(46.2058820, 6.1477327);
 
-    this.markers.map(marker => marker.addTo(this.map));
+    this.markers.map(marker => marker.addTo(this.service.map));
   }
 
   ngOnInit(): void {

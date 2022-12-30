@@ -7,6 +7,7 @@ import { Entry } from '../entry/entry';
 export class AppService {
 
   public entries: Entry[] = require("../entries.json");
+  public map!: L.Map;
 
   constructor() {
   }
