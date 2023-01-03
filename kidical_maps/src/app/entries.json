@@ -1,7 +1,6 @@
 [
     {
         "title": "Zurich",
-        "description": "The kidical mass in zurich",
         "location": {
             "lat": 47.3672808,
             "lng": 8.5408271
@@ -9,7 +8,6 @@
     },
     {
         "title": "St.Gallen",
-        "description": "The kidical mass in St.Gallen",
         "location": {
             "lat": 47.42259,
             "lng": 9.37600
@@ -17,7 +15,6 @@
     },
     {
         "title": "Baden",
-        "description": "The kidical mass in Baden",
         "location": {
             "lat": 47.47105,
             "lng": 8.30761
@@ -25,7 +22,6 @@
     },
     {
         "title": "Basel",
-        "description": "The kidical mass in Basel",
         "location": {
             "lat": 46.19803,
             "lng": 6.14065
@@ -33,7 +29,6 @@
     },
     {
         "title": "Bern",
-        "description": "The kidical mass in Basel",
         "location": {
             "lat": 46.94913,
             "lng": 7.45045
