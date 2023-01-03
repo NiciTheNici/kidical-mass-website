@@ -1,6 +1,8 @@
 .sidebar {
   background-color: teal;
   overflow-y: scroll;
+  border-right: solid;
+  scrollbar-width: none;
 }
 .grid-container {
   display: grid;
@@ -9,3 +11,23 @@
   grid-template-columns: 300px 2fr;
 }
 
+.dates {
+  // text-align: left;
+  line-height: 10px;
+}
+
+.title {
+  text-decoration: underline;
+}
+
+a {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: darkred;
+}
