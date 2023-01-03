@@ -15,8 +15,8 @@ export class MapComponent implements OnInit {
 
   private initMap(): void {
     this.service.map = L.map('map', {
-      center: this.service.entries[0].location,
-      zoom: 13,
+      center: [46.886, 8.300],
+      zoom: 8,
       attributionControl: true,
     });
 
