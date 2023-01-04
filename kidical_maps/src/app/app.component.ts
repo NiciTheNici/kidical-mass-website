@@ -22,7 +22,6 @@ export class AppComponent implements OnInit {
   }
 
   clickCard(entry: Entry): void {
-    console.log(entry);
     this.service.map.flyTo(entry.location, 18)
   }
 }
