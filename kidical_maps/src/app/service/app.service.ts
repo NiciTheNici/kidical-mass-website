@@ -8,6 +8,7 @@ export class AppService {
 
   public entries: Entry[] = require("../entries.json");
   public map!: L.Map;
+  public markers: L.Marker[] = [];
 
   constructor() {
   }

@@ -10,7 +10,6 @@ import { AppService } from '../service/app.service';
 })
 export class MapComponent implements OnInit {
 
-  private markers: L.Marker[] = [];
   private icon: L.Icon;
 
   private initMap(): void {
@@ -32,7 +31,7 @@ export class MapComponent implements OnInit {
     });
     // this.createMarker(46.2058820, 6.1477327);
 
-    this.markers.map(marker => marker.addTo(this.service.map));
+    this.service.markers.map(marker => marker.addTo(this.service.map));
   }
 
   ngOnInit(): void {
@@ -48,7 +47,7 @@ export class MapComponent implements OnInit {
   }
 
   createMarker(entry: Entry): void {
-    this.markers.push(
+    this.service.markers.push(
       L.marker(
         [entry.location.lat, entry.location.lng],
         {

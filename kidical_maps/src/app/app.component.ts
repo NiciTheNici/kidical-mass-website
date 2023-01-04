@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
   }
 
   clickCard(entry: Entry): void {
-    this.service.map.flyTo(entry.location, 18)
+    this.service.map.flyTo(entry.location, 18);
+    // open popup at current entry
   }
 }
