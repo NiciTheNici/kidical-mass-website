@@ -54,7 +54,12 @@ export class MapComponent implements OnInit {
         {
           icon: this.icon,
         }
-      )
+      ).bindPopup(L.popup(
+        {
+          content: 'The kidical mass in ' + '<u>' + entry.title + '</u>',
+          className: "popup",
+          closeButton: false,
+        }))
     )
   }
 }
