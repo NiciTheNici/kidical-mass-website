@@ -99,7 +99,12 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "https://nicithenici.github.io/kidical-mass-website/",
+            "name": "NiciTheNici",
+            "email": "nicithenici@protonmail.com"
+          }
         }
       }
     }
